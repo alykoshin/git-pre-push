@@ -1,6 +1,6 @@
 {
   "name": "git-pre-push",
-  "version": "1.1.2",
+  "version": "0.0.1",
   "description": "Automatically install pre-push hooks for your npm modules.",
   "main": "index.js",
   "scripts": {

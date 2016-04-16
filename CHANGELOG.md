@@ -1,3 +1,7 @@
+## 0.0.1 
+- first version of `git-pre-push` 
+
+
 ## 1.0.2
 - Check `/usr/local/bin/node` if we cannot find the binaries in the PATH.
 
