@@ -198,7 +198,7 @@ Hook.prototype.initialize = function initialize() {
   // scripts so it will still be applied even if we don't have anything to
   // execute.
   //
-  // if (this.config.template) {
+  //  if (this.config.template) {
   //   this.exec(this.git, ['config', 'commit.template', '"'+ this.config.template +'"']);
   // }
 
