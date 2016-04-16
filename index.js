@@ -174,11 +174,12 @@ Hook.prototype.initialize = function initialize() {
   //this.status = this.exec(this.git, ['status', '--porcelain']);
   this.status = this.exec(this.git, ['cherry']);
 
-  if (this.status.code) return this.log(Hook.log.status, 0);
-  if (this.root.code) return this.log(Hook.log.root, 0);
+  if (this.status.status) return this.log(Hook.log.status, 0);
+  if (this.root.status) return this.log(Hook.log.root, 0);
 
   this.status = this.status.stdout.toString().trim();
   this.root = this.root.stdout.toString().trim();
+
 
   try {
     this.json = require(path.join(this.root, 'package.json'));
@@ -198,9 +199,9 @@ Hook.prototype.initialize = function initialize() {
   // scripts so it will still be applied even if we don't have anything to
   // execute.
   //
-  //  if (this.config.template) {
-  //   this.exec(this.git, ['config', 'commit.template', '"'+ this.config.template +'"']);
-  // }
+  //if (this.config.template) {
+  //  this.exec(this.git, ['config', 'commit.template', '"'+ this.config.template +'"']);
+  //}
 
   if (!this.config.run) return this.log(Hook.log.run, 0);
 };
