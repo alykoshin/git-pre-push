@@ -98,7 +98,7 @@ Hook.prototype.parse = function parse() {
 
   if ('string' === typeof config.run) config.run = config.run.split(/[, ]+/);
   if (
-       !Array.isArray(config.run)
+    !Array.isArray(config.run)
     && this.json.scripts
     && this.json.scripts.test
     && this.json.scripts.test !== 'echo "Error: no test specified" && exit 1'
@@ -121,8 +121,8 @@ Hook.prototype.log = function log(lines, exit) {
   if ('number' !== typeof exit) exit = 1;
 
   var prefix = this.colors
-  ? '\u001b[38;5;166mpre-push:\u001b[39;49m '
-  : 'pre-push: ';
+    ? '\u001b[38;5;166mpre-push:\u001b[39;49m '
+    : 'pre-push: ';
 
   lines.push('');     // Whitespace at the end of the log.
   lines.unshift('');  // Whitespace at the beginning.
@@ -171,7 +171,8 @@ Hook.prototype.initialize = function initialize() {
   if (!this.git) return this.log(this.format(Hook.log.binary, 'git'), 0);
 
   this.root = this.exec(this.git, ['rev-parse', '--show-toplevel']);
-  this.status = this.exec(this.git, ['status', '--porcelain']);
+  //this.status = this.exec(this.git, ['status', '--porcelain']);
+  this.status = this.exec(this.git, ['cherry']);
 
   if (this.status.code) return this.log(Hook.log.status, 0);
   if (this.root.code) return this.log(Hook.log.root, 0);
@@ -197,9 +198,9 @@ Hook.prototype.initialize = function initialize() {
   // scripts so it will still be applied even if we don't have anything to
   // execute.
   //
-  if (this.config.template) {
-    this.exec(this.git, ['config', 'commit.template', '"'+ this.config.template +'"']);
-  }
+  //if (this.config.template) {
+  //  this.exec(this.git, ['config', 'commit.template', '"'+ this.config.template +'"']);
+  //}
 
   if (!this.config.run) return this.log(Hook.log.run, 0);
 };
@@ -254,48 +255,48 @@ Hook.prototype.format = util.format;
  */
 Hook.log = {
   binary: [
-    'Failed to locate the `%s` binary, make sure it\'s installed in your $PATH.',
-    'Skipping the pre-push hook.'
-  ].join('\n'),
+            'Failed to locate the `%s` binary, make sure it\'s installed in your $PATH.',
+            'Skipping the pre-push hook.'
+          ].join('\n'),
 
   status: [
-    'Failed to retrieve the `git status` from the project.',
-    'Skipping the pre-push hook.'
-  ].join('\n'),
+            'Failed to retrieve the `git status` from the project.',
+            'Skipping the pre-push hook.'
+          ].join('\n'),
 
   root: [
-    'Failed to find the root of this git repository, cannot locate the `package.json`.',
-    'Skipping the pre-push hook.'
-  ].join('\n'),
+          'Failed to find the root of this git repository, cannot locate the `package.json`.',
+          'Skipping the pre-push hook.'
+        ].join('\n'),
 
   empty: [
-    'No changes detected.',
-    'Skipping the pre-push hook.'
-  ].join('\n'),
+           'No changes detected.',
+           'Skipping the pre-push hook.'
+         ].join('\n'),
 
   json: [
-    'Received an error while parsing or locating the `package.json` file:',
-    '',
-    '  %s',
-    '',
-    'Skipping the pre-push hook.'
-  ].join('\n'),
+          'Received an error while parsing or locating the `package.json` file:',
+          '',
+          '  %s',
+          '',
+          'Skipping the pre-push hook.'
+        ].join('\n'),
 
   run: [
-    'We have nothing pre-push hooks to run. Either you\'re missing the `scripts`',
-    'in your `package.json` or have configured pre-push to run nothing.',
-    'Skipping the pre-push hook.'
-  ].join('\n'),
+         'We have nothing pre-push hooks to run. Either you\'re missing the `scripts`',
+         'in your `package.json` or have configured pre-push to run nothing.',
+         'Skipping the pre-push hook.'
+       ].join('\n'),
 
   failure: [
-    'We\'ve failed to pass the specified git pre-push hooks as the `%s`',
-    'hook returned an exit code (%d). If you\'re feeling adventurous you can',
-    'skip the git pre-push hooks by adding the following flags to your push:',
-    '',
-    '  git push -n (or --no-verify)',
-    '',
-    'This is ill-advised since the push is broken.'
-  ].join('\n')
+             'We\'ve failed to pass the specified git pre-push hooks as the `%s`',
+             'hook returned an exit code (%d). If you\'re feeling adventurous you can',
+             'skip the git pre-push hooks by adding the following flags to your push:',
+             '',
+             '  git push -n (or --no-verify)',
+             '',
+             'This is ill-advised since the push is broken.'
+           ].join('\n')
 };
 
 //
