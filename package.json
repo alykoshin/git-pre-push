@@ -1,7 +1,7 @@
 {
-  "name": "pre-commit",
+  "name": "git-pre-push",
   "version": "1.1.2",
-  "description": "Automatically install pre-commit hooks for your npm modules.",
+  "description": "Automatically install pre-push hooks for your npm modules.",
   "main": "index.js",
   "scripts": {
     "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
@@ -14,29 +14,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/observing/pre-commit.git"
+    "url": "git://github.com/alykoshin/git-pre-push.git"
   },
   "keywords": [
     "git",
     "hooks",
     "npm",
-    "pre-commit",
-    "precommit",
+    "pre-push",
+    "prepush",
     "run",
     "test",
     "development"
   ],
-  "author": "Arnout Kazemier <opensource@observe.it>",
-  "homepage": "https://github.com/observing/pre-commit",
+  "author": "(based on pre-commit by Arnout Kazemier <opensource@observe.it>)",
+  "homepage": "https://github.com/alykoshin/git-pre-push",
   "license": "MIT",
   "dependencies": {
-    "cross-spawn": "2.0.x",
+    "cross-spawn": "2.2.x",
     "which": "1.2.x"
   },
   "devDependencies": {
-    "assume": "1.3.x",
+    "assume": "1.4.x",
     "istanbul": "0.4.x",
-    "mocha": "2.3.x",
-    "pre-commit": "git://github.com/observing/pre-commit.git"
+    "mocha": "2.4.x",
+    "git-pre-push": "git://github.com/alykoshin/git-pre-push.git"
   }
 }
