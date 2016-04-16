@@ -271,7 +271,7 @@ Hook.log = {
         ].join('\n'),
 
   empty: [
-           'No changes detected.',
+           'No commits to be applied to upstream detected.',
            'Skipping the pre-push hook.'
          ].join('\n'),
 
