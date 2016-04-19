@@ -1,6 +1,6 @@
 # pre-commit
 
-[![Version npm][version]](http://browsenpm.org/package/pre-commit)[![Build Status][build]](https://travis-ci.org/observing/pre-commit)[![Dependencies][david]](https://david-dm.org/observing/pre-commit)[![Coverage Status][cover]](https://coveralls.io/r/observing/pre-commit?branch=master)
+[![Version npm][version]](http://browsenpm.org/package/git-pre-push)[![Build Status][build]](https://travis-ci.org/observing/git-pre-push)[![Dependencies][david]](https://david-dm.org/observing/git-pre-push)[![Coverage Status][cover]](https://coveralls.io/r/observing/git-pre-push?branch=master)
 
 [version]: http://img.shields.io/npm/v/git-pre-push.svg?style=flat-square
 [build]: http://img.shields.io/travis/alykoshin/git-pre-push/master.svg?style=flat-square
@@ -8,16 +8,16 @@
 [cover]: http://img.shields.io/coveralls/alykoshin/git-pre-push/master.svg?style=flat-square
 
 **git-pre-push** is a pre-push hook installer for `git`. It will ensure that
-your `npm test` (or other specified scripts) passes before you can commit your
+your `npm test` (or other specified scripts) passes before you can push your
 changes. This all conveniently configured in your `package.json`.
 
 But don't worry, you can still force a commit by telling `git` to skip the
-`pre-push` hooks by simply committing using `--no-verify`.
+pre-push hooks by simply pushing using `--no-verify`.
 
 This package is a fork from excellent [`pre-commit`](https://github.com/observing/pre-commit) package. 
 If you need to hook on pre-commit, rely upon that original package.
 
-Tested under Windows.
+Works under Linux and Windows too.
 
 
 ### Installation
@@ -30,7 +30,9 @@ module simply run:
 npm install --save-dev git-pre-push
 ```
 
-To install it as `devDependency`. When this module is installed it will override
+To install it as `devDependencies`. 
+
+When this module is installed it will override
 the existing `pre-push` file in your `.git/hooks` folder. Existing
 `pre-push` hooks will be backed up as `pre-push.old` in the same repository.
 

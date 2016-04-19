@@ -1,7 +1,7 @@
 {
   "name": "git-pre-push",
   "version": "0.0.3",
-  "description": "Automatically install pre-push hooks for your npm modules (based on pre-commit by Arnout Kazemier <opensource@observe.it>).",
+  "description": "Automatically install pre-push hooks for your npm modules (based on pre-commit package by Arnout Kazemier).",
   "main": "index.js",
   "scripts": {
     "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
