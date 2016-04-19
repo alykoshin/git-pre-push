@@ -1,4 +1,4 @@
-# pre-commit
+# pre-push
 
 [![Version npm][version]](http://browsenpm.org/package/git-pre-push)[![Build Status][build]](https://travis-ci.org/observing/git-pre-push)[![Dependencies][david]](https://david-dm.org/observing/git-pre-push)[![Coverage Status][cover]](https://coveralls.io/r/observing/git-pre-push?branch=master)
 
