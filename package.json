@@ -38,6 +38,5 @@
     "assume": "1.4.x",
     "istanbul": "0.4.x",
     "mocha": "2.4.x",
-    "git-pre-push": "git://github.com/alykoshin/git-pre-push.git"
   }
 }
