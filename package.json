@@ -27,8 +27,8 @@
     "test",
     "development"
   ],
-  "author": "(based on pre-commit by Arnout Kazemier <opensource@observe.it>)",
-  "homepage": "https://github.com/alykoshin/git-pre-push",
+  "author": "(based on pre-commit by Arnout Kazemier forked from alykoshin <opensource@observe.it>)",
+  "homepage": "https://github.com/wibjorn/msdocs-git-pre-push",
   "license": "MIT",
   "dependencies": {
     "cross-spawn": "2.2.x",
