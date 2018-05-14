@@ -172,7 +172,7 @@ Hook.prototype.initialize = function initialize() {
 
   this.root = this.exec(this.git, ['rev-parse', '--show-toplevel']);
   //this.status = this.exec(this.git, ['status', '--porcelain']);
-  this.status = this.exec(this.git, ['cherry']);
+  this.status = this.exec(this.git, ['cherry', 'origin']);
 
   if (this.status.status) return this.log(Hook.log.status, 0);
   if (this.root.status) return this.log(Hook.log.root, 0);

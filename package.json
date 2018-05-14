@@ -1,6 +1,6 @@
 {
-  "name": "git-pre-push",
-  "version": "0.0.5",
+  "name": "msdocs-pre-push",
+  "version": "0.0.6",
   "description": "Automatically install pre-push hooks for your npm modules (based on pre-commit package by Arnout Kazemier).",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,8 @@
     "test",
     "development"
   ],
-  "author": "(based on pre-commit by Arnout Kazemier <opensource@observe.it>)",
-  "homepage": "https://github.com/alykoshin/git-pre-push",
+  "author": "(based on pre-commit by Arnout Kazemier forked from alykoshin <opensource@observe.it>)",
+  "homepage": "https://github.com/wibjorn/msdocs-git-pre-push",
   "license": "MIT",
   "dependencies": {
     "cross-spawn": "2.2.x",
@@ -38,6 +38,5 @@
     "assume": "1.4.x",
     "istanbul": "0.4.x",
     "mocha": "2.4.x",
-    "git-pre-push": "git://github.com/alykoshin/git-pre-push.git"
   }
 }
